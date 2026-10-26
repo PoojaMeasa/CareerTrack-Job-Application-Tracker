@@ -1,0 +1,807 @@
+/* General Page Styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #1e293b;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Main Application */
+.app-container,
+.dashboard-page {
+  min-height: 100vh;
+}
+
+/* Main Header */
+.app-header,
+.main-header {
+  background-color: #243b55;
+  color: white;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.app-header h1,
+.main-header h1 {
+  background: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-size: 28px;
+}
+
+.app-header p {
+  color: #e2e8f0;
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+/* Logout Button */
+.logout-button {
+  padding: 11px 20px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #dc2626;
+}
+
+/* General Headings */
+h2 {
+  color: #243b55;
+  text-align: center;
+  margin: 30px 0 25px;
+  font-size: 24px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards,
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto 40px;
+}
+
+.dashboard-card {
+  background-color: white;
+  padding: 26px 18px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+  border-top: 5px solid #243b55;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
+}
+
+.dashboard-card h3 {
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 5px 0 15px;
+}
+
+.dashboard-card p {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  color: #243b55;
+}
+
+.dashboard-card.total {
+  border-top-color: #243b55;
+}
+
+.dashboard-card.applied {
+  border-top-color: #3498db;
+}
+
+.dashboard-card.assessment {
+  border-top-color: #f39c12;
+}
+
+.dashboard-card.interview {
+  border-top-color: #8e44ad;
+}
+
+.dashboard-card.selected,
+.dashboard-card.offer {
+  border-top-color: #27ae60;
+}
+
+.dashboard-card.rejected {
+  border-top-color: #e74c3c;
+}
+
+/* Message */
+.message {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 13px 16px;
+  border-radius: 8px;
+  background-color: #e0f2fe;
+  color: #075985;
+  border: 1px solid #bae6fd;
+  overflow-wrap: anywhere;
+}
+
+/* Application Form Section */
+.form-section {
+  width: 100%;
+}
+
+.application-form {
+  background-color: white;
+  width: 90%;
+  max-width: 650px;
+  margin: 25px auto 45px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 22px rgba(36, 59, 85, 0.08);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #243b55;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.application-form input,
+.application-form select {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: white;
+  color: #334155;
+  font-size: 15px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.application-form input:focus,
+.application-form select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.12);
+}
+
+.form-group input::placeholder {
+  color: #94a3b8;
+}
+
+/* Add and Update Buttons */
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form-buttons button,
+.application-form .submit-button,
+.application-form button[type="submit"] {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #243b55;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.form-buttons button:hover,
+.application-form .submit-button:hover,
+.application-form button[type="submit"]:hover {
+  background-color: #365779;
+  transform: translateY(-1px);
+}
+
+/* Cancel Edit Button */
+.form-buttons .cancel-button,
+.application-form .cancel-button,
+.application-form button[type="button"] {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-buttons .cancel-button:hover,
+.application-form .cancel-button:hover,
+.application-form button[type="button"]:hover {
+  background-color: #e2e8f0;
+}
+
+/* Search Bar */
+.search-input,
+.search-container input {
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background-color: white;
+  font-size: 15px;
+}
+
+.search-input:focus,
+.search-container input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.12);
+}
+
+/* Applications Table */
+.table-section {
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.table-wrapper,
+.table-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 20px auto 45px;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.07);
+}
+
+.table-wrapper table,
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table-wrapper thead th,
+.table-container thead th,
+th {
+  background-color: #243b55;
+  color: white;
+  padding: 16px 14px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table-wrapper tbody td,
+.table-container tbody td,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table-wrapper tbody tr:nth-child(even),
+.table-container tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.table-wrapper tbody tr:hover,
+.table-container tbody tr:hover {
+  background-color: #eef4fb;
+}
+
+.empty-message {
+  text-align: center !important;
+  padding: 30px !important;
+  color: #64748b;
+}
+
+/* Table Action Buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-buttons button,
+td button {
+  padding: 8px 13px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.edit-button,
+td button:first-child {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.edit-button:hover,
+td button:first-child:hover {
+  background-color: #bfdbfe;
+}
+
+.delete-button,
+td button:last-child {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.delete-button:hover,
+td button:last-child:hover {
+  background-color: #fecaca;
+}
+
+/* Application Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.status-badge.applied {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-badge.assessment {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.interview {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.status-badge.offer,
+.status-badge.selected {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Login Page */
+.login-container,
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0e7ff, #f5f3ff);
+  padding: 20px;
+}
+
+.login-card,
+.auth-form {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h1 {
+  background: none;
+  color: #243b55;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 12px;
+  font-size: 30px;
+}
+
+.login-card h2,
+.auth-form h2 {
+  text-align: center;
+  color: #243b55;
+  margin: 25px 0 20px;
+}
+
+.login-card p,
+.auth-form p {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.login-card label {
+  display: block;
+  margin: 15px 0 7px;
+  color: #243b55;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card input,
+.auth-form input {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px;
+  margin: 5px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-card input:focus,
+.auth-form input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.login-card button[type="submit"],
+.auth-form button[type="submit"] {
+  width: 100%;
+  padding: 13px;
+  margin-top: 20px;
+  background-color: #243b55;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.login-card button[type="submit"]:hover,
+.auth-form button[type="submit"]:hover {
+  background-color: #365779;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .dashboard-cards,
+  .dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 92%;
+  }
+
+  .table-wrapper,
+  .table-container {
+    width: 94%;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header,
+  .main-header {
+    padding: 18px 4%;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .app-header h1,
+  .main-header h1 {
+    font-size: 23px;
+  }
+
+  .app-header p {
+    font-size: 12px;
+  }
+
+  .logout-button {
+    padding: 9px 12px;
+  }
+
+  .dashboard-cards,
+  .dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    padding: 20px 10px;
+  }
+
+  .dashboard-card h3 {
+    font-size: 13px;
+  }
+
+  .dashboard-card p {
+    font-size: 28px;
+  }
+
+  .application-form {
+    width: 92%;
+    padding: 20px;
+  }
+
+  .search-input,
+  .search-container input {
+    width: 92%;
+  }
+
+  .table-wrapper,
+  .table-container {
+    width: 94%;
+  }
+
+  .table-wrapper th,
+  .table-wrapper td,
+  .table-container th,
+  .table-container td {
+    padding: 12px 10px;
+  }
+
+  .login-card,
+  .auth-form {
+    padding: 25px 20px;
+  }
+
+  .message {
+    width: 92%;
+  }
+}
+
+@media (max-width: 380px) {
+  .dashboard-cards,
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1,
+  .main-header h1 {
+    font-size: 20px;
+  }
+}
+.link-button {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  background: none;
+  color: #1d4ed8;
+}
+
+/* ===== CareerTrack UI Enhancements ===== */
+
+/* Smooth page experience */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+}
+
+/* Modern header */
+.app-header,
+.main-header {
+  background: linear-gradient(135deg, #1e3a5f, #31577d);
+  padding: 22px 5%;
+}
+
+.app-header h1,
+.main-header h1 {
+  letter-spacing: -0.5px;
+}
+
+.logout-button {
+  padding: 12px 24px;
+  border-radius: 9px;
+  box-shadow: 0 3px 8px rgba(239, 68, 68, 0.2);
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Dashboard cards */
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  border-top: 5px solid #243b55;
+  padding: 30px 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(36, 59, 85, 0.12);
+}
+
+.dashboard-card h3 {
+  letter-spacing: 0.2px;
+}
+
+.dashboard-card p {
+  margin-top: 8px;
+  font-size: 40px;
+}
+
+/* Application form */
+.application-form {
+  border: 1px solid #e8edf5;
+  box-shadow: 0 10px 30px rgba(36, 59, 85, 0.08);
+}
+
+.application-form input:hover,
+.application-form select:hover {
+  border-color: #94a3b8;
+}
+
+.application-form button[type="submit"] {
+  background: linear-gradient(135deg, #243b55, #365779);
+  box-shadow: 0 4px 10px rgba(36, 59, 85, 0.15);
+}
+
+.application-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #365779, #456b91);
+}
+
+/* Search box */
+.search-input,
+.search-container input {
+  min-height: 48px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.search-input:focus,
+.search-container input:focus {
+  border-color: #31577d;
+}
+
+/* Applications table */
+.table-wrapper,
+.table-container {
+  border: 1px solid #e8edf5;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+}
+
+.table-wrapper thead th,
+.table-container thead th,
+th {
+  background: #243b55;
+  padding: 17px 14px;
+}
+
+.table-wrapper tbody tr,
+.table-container tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table-wrapper tbody td,
+.table-container tbody td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/* Action buttons */
+.action-buttons button,
+td button {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.action-buttons button:hover,
+td button:hover {
+  transform: translateY(-1px);
+}
+
+/* Success and information messages */
+.message {
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
+}
+
+/* Login and registration cards */
+.login-card,
+.auth-form {
+  border: 1px solid #e8edf5;
+  box-shadow: 0 12px 35px rgba(36, 59, 85, 0.12);
+}
+
+.login-card button[type="submit"],
+.auth-form button[type="submit"] {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.login-card button[type="submit"]:hover,
+.auth-form button[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+
+/* Keyboard accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Responsive improvements */
+@media (max-width: 600px) {
+  .app-header,
+  .main-header {
+    padding: 18px 4%;
+  }
+
+  .dashboard-card {
+    padding: 22px 10px;
+  }
+
+  .dashboard-card p {
+    font-size: 32px;
+  }
+
+  .application-form {
+    margin-top: 20px;
+  }
+
+  .table-wrapper,
+  .table-container {
+    overflow-x: auto;
+  }
+}
